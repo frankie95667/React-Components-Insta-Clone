@@ -18,6 +18,11 @@
   color: #999;
   background-color: transparent;
 }
+
+.comment-form input:focus{
+  outline: none;
+}
+
 .user {
   font-size: 14px;
   color: black;
