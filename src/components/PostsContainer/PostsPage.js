@@ -4,10 +4,17 @@ import Post from "./Post";
 import "./Posts.css";
 
 // pass the data from App.js down as props then map through the data
-const PostsPage = () => {
+const PostsPage = (props) => {
+  const data = props.data.filter(post => {
+    return post.username.includes(props.search);
+  })
+
+  console.log(props.search);
   return (
     <div className="posts-container-wrapper">
-      {/* map through data here */}
+      {data.map((post, i) => {
+        return <Post key={i} post={post} />;
+      })}
     </div>
   );
 };

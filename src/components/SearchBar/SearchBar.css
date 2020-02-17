@@ -12,10 +12,20 @@
 }
 .search-form input {
   text-align: center;
-  color: #262626;
+  color: #ababab;
+  background-color: #FAFAFA;
+  border: 1.2px solid #DBDBDB;
+  border-radius: 2.1px;
+  width: 200px;
+  padding: 5px 0;
 }
+
+.search-form input::placeholder {
+  color: #ababab;
+}
+
 .image-wrapper {
-  height: 50px;
+  font-size: 2rem;
 }
 
 .logo-image {
@@ -28,4 +38,5 @@
 
 .social {
   width: 50px;
+  font-size: 1.5rem;
 }
