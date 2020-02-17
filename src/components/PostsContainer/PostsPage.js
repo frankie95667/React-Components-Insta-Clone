@@ -6,7 +6,7 @@ import "./Posts.css";
 // pass the data from App.js down as props then map through the data
 const PostsPage = (props) => {
   const data = props.data.filter(post => {
-    return post.username.includes(props.search);
+    return post.username.toLowerCase().includes(props.search.toLowerCase());
   })
 
   console.log(props.search);
