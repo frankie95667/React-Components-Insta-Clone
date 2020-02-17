@@ -1,14 +1,16 @@
 .search-bar-wrapper {
   border-bottom: 1px solid #3333;
-  height: 60px;
+  height: 80px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   background: #ffffff;
 }
 .search-form {
-  width: 150px;
+  width: 200px;
   font-size: 14px;
+  position: relative;
+  left: -50px;
 }
 .search-form input {
   text-align: center;
@@ -24,12 +26,26 @@
   color: #ababab;
 }
 
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
 .image-wrapper {
   font-size: 2rem;
+  border-right: 2px solid black;
+  padding-right: 25px;
+  margin-right: 20px;
 }
 
 .logo-image {
   height: 100%;
+}
+
+.text-logo {
+  width: auto;
+  justify-self: self-start;
+  height: 55px;
 }
 
 .social-wrapper {
