@@ -8,12 +8,10 @@ const PostsPage = (props) => {
   const data = props.data.filter(post => {
     return post.username.toLowerCase().includes(props.search.toLowerCase());
   })
-
-  console.log(props.search);
   return (
     <div className="posts-container-wrapper">
-      {data.map((post, i) => {
-        return <Post key={i} post={post} />;
+      {data.map((post) => {
+        return <Post key={post.key} post={post} updateLikes={props.updateLikes} />;
       })}
     </div>
   );

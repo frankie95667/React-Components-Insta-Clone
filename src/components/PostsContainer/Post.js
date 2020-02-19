@@ -1,6 +1,6 @@
 // You will add code in this file
 
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import CommentSection from "../CommentSection/CommentSectionContainer";
 import LikeSection from "./LikeSection";
 import PostHeader from "./PostHeader";
@@ -9,18 +9,14 @@ import "./Posts.css";
 
 const Post = props => {
   // set up state for the likes
-  const [likesClass, setLikesClass] = useState('far');
-  const [likes, setLikes] = useState(props.post.likes)
   const [showComments, setShowComments] = useState(false);
 
-  const likesClick = () => {
-    if(likesClass === 'far'){
-     setLikesClass('fas liked');
-     setLikes(props.post.likes + 1); 
-    } else {
-      setLikesClass('far');
-      setLikes(props.post.likes)
-    }
+  const likeClick = () => {
+    props.updateLikes(props.post.key, props.post.likes + 1, true);
+  }
+
+  const unlikeClick = () => {
+    props.updateLikes(props.post.key, props.post.likes - 1, false);
   }
 
   const commentsClick = () => {
@@ -43,9 +39,10 @@ const Post = props => {
         />
       </div>
       <LikeSection 
-        likes={likes} 
-        likesClass={likesClass} 
-        likesClick={likesClick} 
+        likes={props.post.likes} 
+        liked={props.post.liked}
+        likeClick={likeClick} 
+        unlikeClick={unlikeClick}
         showComments={showComments}
         commentsClick={commentsClick} />
       {showComments ? <CommentSection

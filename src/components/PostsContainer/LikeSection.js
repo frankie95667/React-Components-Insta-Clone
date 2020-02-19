@@ -3,6 +3,14 @@
 import React from 'react';
 
 const LikeSection = props => {
+
+  const liked = () => {
+    if(props.liked){
+      return <i onClick={() => props.unlikeClick()} className='fas fa-heart liked' />;
+    }
+    return <i onClick={() => props.likeClick()} className='far fa-heart' />;
+  }
+
   return (
     <div className="like-wrapper">
     <div
@@ -10,7 +18,7 @@ const LikeSection = props => {
       key="likes-icons-container"
     >
       <div className="like-section-wrapper">
-        <i onClick={() => props.likesClick()} className={props.likesClass + ' fa-heart'} />
+        {liked()}
       </div>
       <div className="like-section-wrapper">
         <i 
