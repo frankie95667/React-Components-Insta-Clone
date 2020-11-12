@@ -1,7 +1,6 @@
 .comment-text {
   text-align: left;
-  padding: 2px;
-  margin-left: 4px;
+  padding: 4px 0;
 }
 .comment {
   font-size: 16px;
@@ -13,14 +12,23 @@
 .comment-form input {
   width: 100%;
   font-size: 14px;
-  padding: 10px;
+  padding: 17px 0 10px 0;
   border: none;
   border-top: 1px solid #efefef;
   color: #999;
+  background-color: transparent;
 }
+
+.comment-form input:focus{
+  outline: none;
+}
+
 .user {
   font-size: 14px;
-  margin-left: 5px;
   color: black;
   font-weight: bold;
+}
+
+.comment-wrapper {
+  padding: 0 20px;
 }

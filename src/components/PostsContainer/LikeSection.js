@@ -3,20 +3,30 @@
 import React from 'react';
 
 const LikeSection = props => {
+
+  const liked = () => {
+    if(props.liked){
+      return <i onClick={() => props.unlikeClick()} className='fas fa-heart liked' />;
+    }
+    return <i onClick={() => props.likeClick()} className='far fa-heart' />;
+  }
+
   return (
-    <div>
+    <div className="like-wrapper">
     <div
       className="like-section"
       key="likes-icons-container"
     >
       <div className="like-section-wrapper">
-        <i className="far fa-heart" />
+        {liked()}
       </div>
       <div className="like-section-wrapper">
-        <i className="far fa-comment" />
+        <i 
+          className={props.showComments ? 'fas fa-comment' : 'far fa-comment'}
+          onClick={() => props.commentsClick()} />
       </div>
     </div>
-    <p className="like-number">likes</p>
+    <p className="like-number">{props.likes} likes</p>
 </div>
   )
 };
